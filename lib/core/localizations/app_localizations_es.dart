@@ -68,6 +68,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get noFoundMore => 'No se encontraron más Pokémon';
 
   @override
+  String get noFavoritePokemons => 'No has marcado ningún Pokémon como favorito';
+
+  @override
+  String get noFavoritePokemonsParagraph => 'Haz clic en el ícono de corazón de tus Pokémon favoritos y aparecerán aquí.';
+
+  @override
   String get noDescriptionAvailable => 'No hay descripción disponible';
 
   @override

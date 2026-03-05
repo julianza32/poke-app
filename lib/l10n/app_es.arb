@@ -21,6 +21,8 @@
   "retry": "Reintentar",
   "noFoundItemsWithThisType": "No se encontraron Pokémon con este tipos",
   "noFoundMore": "No se encontraron más Pokémon",
+  "noFavoritePokemons": "No has marcado ningún Pokémon como favorito",
+  "noFavoritePokemonsParagraph": "Haz clic en el ícono de corazón de tus Pokémon favoritos y aparecerán aquí.",
   "noDescriptionAvailable": "No hay descripción disponible",
   "unknown": "Desconocido",
   "commingSoon": "¡Muy pronto disponible!",

@@ -219,6 +219,18 @@ abstract class AppLocalizations {
   /// **'No more Pokémon found'**
   String get noFoundMore;
 
+  /// No description provided for @noFavoritePokemons.
+  ///
+  /// In en, this message translates to:
+  /// **'You haven\'t marked any Pokémon as favorites'**
+  String get noFavoritePokemons;
+
+  /// No description provided for @noFavoritePokemonsParagraph.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the heart icon on your favorite Pokémon and they will appear here.'**
+  String get noFavoritePokemonsParagraph;
+
   /// No description provided for @noDescriptionAvailable.
   ///
   /// In en, this message translates to:

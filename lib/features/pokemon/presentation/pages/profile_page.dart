@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:global66/core/localizations/app_localizations.dart';
 import 'package:global66/features/pokemon/presentation/desing/organism/not_found_organism.dart';
 import 'package:global66/features/pokemon/presentation/desing/templates/page_template.dart';
 
-class RegionsPage extends StatelessWidget {
-  const RegionsPage({super.key});
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {

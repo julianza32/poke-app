@@ -99,8 +99,4 @@ class _PokemonListItem extends StatelessWidget {
     }).toList();
   }
 
-  String _capitalizeName(String name) {
-    if (name.isEmpty) return name;
-    return name[0].toUpperCase() + name.substring(1);
-  }
 }

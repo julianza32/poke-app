@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:global66/core/localizations/app_localizations.dart';
 import 'package:global66/features/pokemon/presentation/desing/organism/item_pokemon_organism.dart';
 import 'package:global66/features/pokemon/presentation/desing/organism/loader_organism.dart';
 import 'package:global66/features/pokemon/presentation/desing/organism/not_found_organism.dart';
@@ -19,14 +20,14 @@ class FavoritesPage extends ConsumerWidget {
         children: [
           const SizedBox(height: 50),
           Expanded(
-            child: _buildContent(fetchState, ref),
+            child: _buildContent(fetchState, ref, context ),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildContent(FetchState fetchState, WidgetRef ref) {
+  Widget _buildContent(FetchState fetchState, WidgetRef ref, BuildContext context) {
     if (fetchState.isLoading) {
       return const Center(
         child: LoaderOrganism(),
@@ -34,21 +35,30 @@ class FavoritesPage extends ConsumerWidget {
     }
 
     if (fetchState.error != null) {
-      return NotFoundOrganism(
-        imagePath: 'assets/images/magi.png',
-        text: 'Algo salió mal...',
-        paragraph:
-            'No pudimos cargar la información en este momento. Verifica tu conexión o intenta nuevamente más tarde.',
-        onPress: () => ref.invalidate(pokemonsFavoriteNotifierProvider),
-        titleButton: 'Reintentar',
+      return Padding(
+        padding: const  EdgeInsets.all(16.0),
+        child: NotFoundOrganism(
+          imagePath: 'assets/images/magi.png',
+          text: AppLocalizations.of(context)!.somethingWentWrong,
+          paragraph:
+              AppLocalizations.of(context)!.canNotLoadInformation,
+          onPress: () => ref.invalidate(pokemonsFavoriteNotifierProvider),
+          titleButton: AppLocalizations.of(context)!.retry,
+        ),
       );
     }
 
     if (!fetchState.hasData || fetchState.items.isEmpty) {
-      return const Center(
-        child: Padding(
-          padding: EdgeInsets.all(20),
-          child: Text('No tienes Pokémon favoritos aún'),
+      return Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: NotFoundOrganism(
+          imagePath: 'assets/images/magi.png',
+          text: AppLocalizations.of(context)!.noFavoritePokemons,
+          paragraph:
+              AppLocalizations.of(context)!.noFavoritePokemonsParagraph,
+          showButton: false,
+          titleButton: '',
+          onPress: () {},
         ),
       );
     }
