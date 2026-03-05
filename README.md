@@ -52,7 +52,7 @@ Una aplicación Flutter moderna que consume la [PokéAPI](https://pokeapi.co/) p
 
 ```bash
 git clone https://github.com/julianza32/poke-app.git
-cd pokeapp
+cd poke-app
 ```
 
 ### 2. Instalar dependencias
